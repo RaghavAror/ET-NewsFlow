@@ -176,7 +176,7 @@ flowchart TD
     B --> C{Valid JSON?}
     C -->|Yes| D[Sort by date]
     C -->|No| E[Regex fallback<br>+ story_arc_error]
-    D --> F[timeline_events[]<br>with sentiment_score]
+    D --> F[timeline_events (list)<br>with sentiment_score]
     F --> G[Interactive Timeline<br>on Frontend]
 ```
 
@@ -189,8 +189,8 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    A[knowledge_base +<br>user_portfolio[]] --> B[LLM: 3-persona<br>JSON impact cards]
-    B --> C[impact_cards[]<br>per persona]
+    A[knowledge_base + user_portfolio (list)] --> B[LLM: 3-persona<br>JSON impact cards]
+    B --> C[impact_cards (per persona)]
 
     A --> D[LLM: portfolio scan<br>for each held stock]
     D --> E[portfolio_signal<br>BUY/WATCH/SELL]
