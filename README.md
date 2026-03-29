@@ -172,12 +172,12 @@ THEMES_JSON: [...]      ← Parsed separately for tag cloud
 
 ```mermaid
 flowchart TD
-    A[knowledge_base] --> B[LLM: extract<br>6-8 events as JSON]
+    A[knowledge_base] --> B["LLM: extract<br>6-8 events as JSON"]
     B --> C{Valid JSON?}
     C -->|Yes| D[Sort by date]
-    C -->|No| E[Regex fallback<br>+ story_arc_error]
-    D --> F[timeline_events (list)<br>with sentiment_score]
-    F --> G[Interactive Timeline<br>on Frontend]
+    C -->|No| E["Regex fallback<br>+ story_arc_error"]
+    D --> F["timeline_events (list)<br>with sentiment_score"]
+    F --> G["Interactive Timeline<br>on Frontend"]
 ```
 
 ---
@@ -189,13 +189,13 @@ flowchart TD
 
 ```mermaid
 flowchart LR
-    A[knowledge_base + user_portfolio (list)] --> B[LLM: 3-persona<br>JSON impact cards]
-    B --> C[impact_cards (per persona)]
+    A["knowledge_base + user_portfolio (list)"] --> B["LLM: 3-persona<br>JSON impact cards"]
+    B --> C["impact_cards (per persona)"]
 
-    A --> D[LLM: portfolio scan<br>for each held stock]
-    D --> E[portfolio_signal<br>BUY/WATCH/SELL]
+    A --> D["LLM: portfolio scan<br>for each held stock"]
+    D --> E["portfolio_signal<br>BUY/WATCH/SELL"]
 
-    C --> F[Impact Cards UI<br>+ Signal Banner]
+    C --> F["Impact Cards UI<br>+ Signal Banner"]
     E --> F
 ```
 
